@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.example.springcloudmysql.entities.Contact;
 import com.example.springcloudmysql.repositories.ContactRepository;
 
+import io.micrometer.common.lang.NonNull;
+
 public class ContactService {
 	private ContactRepository repository;
 	
@@ -24,7 +26,11 @@ public class ContactService {
 		return repository.findById(id);
 	}
 	
-	public Contact create(Contact contact) {
+	public Contact save(Contact contact) {
 		return repository.save(contact);
+	}
+	
+	public void deleteById(@NonNull Long id) {
+		repository.deleteById(id);
 	}
 }

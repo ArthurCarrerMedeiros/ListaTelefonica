@@ -4,12 +4,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.stereotype.Service;
 import com.example.springcloudmysql.entities.Contact;
 import com.example.springcloudmysql.repositories.ContactRepository;
-
 import io.micrometer.common.lang.NonNull;
 
+@Service
 public class ContactService {
 	private ContactRepository repository;
 	
